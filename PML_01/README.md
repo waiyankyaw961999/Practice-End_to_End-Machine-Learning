@@ -16,3 +16,8 @@ Attribute Information:
 7. model year: multi-valued discrete
 8. origin: multi-valued discrete
 9. car name: string (unique for each instance)
+
+<h2> Download </h2>
+<a href="https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-mpg.data">UCI Machine Learning Repository - Auto MPG Data Set</a>
+
+
