@@ -21,7 +21,7 @@ Attribute Information:
 <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-mpg.data">UCI Machine Learning Repository - Auto MPG Data Set</a>
 
 <h2> Build a web app using Flask </h2>
-<a href="https://mpg-prediction-waiyan-60157.herokuapp.com/">Web app deployed on Heroku server</a>
+<a href="https://mpg-prediction-waiyan.herokuapp.com/">Web app deployed on Heroku server</a>
 
 
 
