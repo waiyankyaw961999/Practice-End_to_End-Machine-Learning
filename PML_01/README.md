@@ -1,4 +1,4 @@
-<h2>Data Set Information:</h2>
+<h2>Dataset Information:</h2>
 
 This dataset is a slightly modified version of the dataset provided in the StatLib library. In line with the use by Ross Quinlan (1993) in predicting the attribute "mpg", 8 of the original instances were removed because they had unknown values for the "mpg" attribute. The original dataset is available in the file "auto-mpg.data-original".
 
