@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <title>PML_01</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    </style>
+
+</head>
+
+<body>
+    <h1 class="badge-primary text-center pb-3">
+        Predicting mpg using Supervised Machine algorithms
+    </h1>
+    <div class="container pt-2">
+        <h2>
+            Auto MPG Dataset
+        </h2>
+        
+        <h3>Data Set Information:</h3>
+        <p>
+        This dataset is a slightly modified version of the dataset provided in the StatLib library.
+        In line with the use by Ross Quinlan (1993) in predicting the attribute "mpg", 8 of the original instances were
+        removed because they had unknown values for the "mpg" attribute. The original dataset is available in the file
+        "auto-mpg.data-original".
+        "The data concerns city-cycle fuel consumption in miles per gallon, to be predicted in terms of 3 multivalued
+        discrete and 5 continuous attributes." (Quinlan, 1993)
+        </p>
+       
+        <h4>Attribute Information:</h4>
+        <ul>
+            <li>mpg: continuous</li>
+            <li>cylinders: multi-valued discrete</li>
+            <li>displacement: continuous</li>
+            <li>horsepower: continuous</li>
+            <li>weight: continuous</li>
+            <li>acceleration: continuous</li>
+            <li>model year: multi-valued discrete</li>
+            <li>origin: multi-valued discrete</li>
+            <li>car name: string (unique for each instance)</li>
+        </ul>
+       
+        <div>
+            <h4>Model Performance</h4>
+            <p>
+                Using the different supervised machine learning models to predict the value of mpg.
+                The Root Mean squared values of each model are compared, and grid search method is used for tuning the hyperparameters. 
+                Detail Implementation on colab laboratory can be explored by clicking this <a href="https://github.com/waiyankyaw961999/Practice-End_to_End-Machine-Learning-/blob/main/PML_01/notebook.ipynb" target="_blank">link</a>.
+            </p>
+                
+
+        </div>
+        <h4>Prediction</h4>
+        <form action= "/predict" method="POST">
+        <div class="container my-auto pb-5">
+            <div class="row">
+                <div class="col">
+
+                    <div class="form-floating mb-3">
+                        <label for="floatingInputValue">Cylinders</label>
+                        <input type="number" class="form-control" id="floatingInput" name="cylinders" placeholder="cylinders eg. 4" required="required" >
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <label for="floatingInputValue">Displacement</label>
+                        <input type="number" class="form-control" id="floatingInput" name="displacement"
+                            placeholder="displacement eg. 155.0" required="required" >
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <label for="floatingInputValue">Horse Power</label>
+                        <input type="number" class="form-control" id="floatingInput" name="horsepower" placeholder="horse Power eg. 93" required="required" >
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <label for="floatingInputValue">Model year</label>
+                        <input type="number" class="form-control" name="modelyear" id="floatingInput"
+                            placeholder="model year eg. 81, 80" required="required" >
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <label for="floatingInputValue">Weight</label>
+                        <input type="number" class="form-control" id="floatingInput" name="weight" placeholder="weight eg. 2500">
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <label for="floatingInputValue">Acceleration</label>
+                        <input type="number" class="form-control" id="floatingInput" name="acceleration"
+                            placeholder="acceleration eg. 15.0">
+                    </div>
+                    <div class="form-floating mb-3">
+                        <label for="floatingInputValue">Origin</label>
+                        <input type="number" class="form-control" id="floatingInput" placeholder="origin eg. 2" name="origin">
+                    </div>
+
+                    <div class="form-floating mb-3">
+                    <label for="floatingInputValue">Result: MPG</label><br>
+                    <p class="result badge-primary badge"> 
+                        {{result}}
+                    </p>                    
+                    </div>     
+                    <br/>
+                <button type="submit" class="btn btn-secondary">predict</button>            
+                </div>
+                
+            </div>
+           
+        </div>
+        </form>
+
+
+        <blockquote >
+            <footer >
+                Dua, D. and Graff, C. (2019). UCI Machine Learning Repository
+                [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California,
+                School of Information and Computer Science.
+            </footer>
+        </blockquote>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
